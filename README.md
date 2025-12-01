@@ -1,4 +1,4 @@
-Coming soon...
+Thank you for taking notice of this work. The code will be made available after it is accepted.
 
 ```
 @misc{li2025memoryout,
