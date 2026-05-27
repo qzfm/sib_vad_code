@@ -1,0 +1,7 @@
+outputs/
+/*.npy
+/*.log
+*.pyc
+__pycache__/
+*.pth
+*.npy

@@ -1,0 +1,37 @@
+exp:
+  output_dir: 'outputs'
+  experiment_name: 'shtech_xxx'
+
+training:
+  batch_size: 64
+  epochs: 10
+  lr: 2e-4
+  save_interval: 1
+  num_workers: 8
+  seed: 42
+  load_pretrained: ''
+  lambda_rgb: 1
+  lambda_text: 1
+  lambda_diff: 1
+
+testing:
+  batch_size: 64
+  num_workers: 8
+  ckpt_path: ''
+  save_path: './shtech_save' # 保存预测结果
+  use_saved_result: False # if True, 使用已有的预测结果计算分数
+  pre_norm: True
+  sigma: 13
+
+
+dataset:
+  name: "shtech"
+  trainset_json_path: './data/shtech_train.json'
+  testset_json_path: './data/shtech_test.json'
+  image_path: "/dataset/SHTech/shanghaitech"
+  text_path: "/dataset/shanghaitech/internvl_video_simsce"
+  gt_files_dir: '/dataset/SHTech/shanghaitech/testing/test_frame_mask'
+  decoder_layers: 4
+  bottleneck_dim: 16
+  weight_rgb: 0.2
+  weight_text: 0.8

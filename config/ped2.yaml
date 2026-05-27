@@ -1,0 +1,38 @@
+exp:
+  output_dir: 'outputs'
+  experiment_name: 'ped2_xxx'
+
+training:
+  batch_size: 64
+  epochs: 1000
+  lr: 2e-4
+  save_interval: 50
+  num_workers: 8
+  seed: 42
+  load_pretrained: ''
+  lambda_rgb: 1
+  lambda_text: 1
+  lambda_diff: 1
+  
+testing:
+  batch_size: 32
+  num_workers: 8
+  ckpt_path: ''
+  save_path: './ped2_save' # 保存预测结果
+  use_saved_result: False # if True, 使用已有的预测结果计算分数
+  pre_norm: True
+  sigma: 5
+
+
+dataset:
+  name: "ped2"
+  trainset_json_path: './data/ped2_train.json'
+  testset_json_path: './data/ped2_test.json'
+  image_path: "/dataset/UCSD_Anomaly_Dataset.v1p2/UCSDped2"
+  text_path: "/dataset/UCSD_Anomaly_Dataset.v1p2/UCSDped2/internvl_video_simsce"
+  gt_files_dir: '/dataset/UCSD_Anomaly_Dataset.v1p2/UCSDped2/gt'
+  decoder_layers: 4
+  bottleneck_dim: 8
+  weight_rgb: 0.8
+  weight_text: 0.2
+

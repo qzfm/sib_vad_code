@@ -1,0 +1,38 @@
+exp:
+  output_dir: 'outputs'
+  experiment_name: 'avenue_xxx'
+
+training:
+  batch_size: 64
+  epochs: 50
+  lr: 2e-4
+  save_interval: 5
+  num_workers: 8
+  seed: 42
+  load_pretrained: ''
+  lambda_rgb: 1
+  lambda_text: 1
+  lambda_diff: 1
+  
+testing:
+  batch_size: 64
+  num_workers: 8
+  ckpt_path: ''
+  save_path: './avenue_save' # 保存预测结果
+  use_saved_result: False # if True, 使用已有的预测结果计算分数
+  pre_norm: False
+  sigma: 4
+
+
+dataset:
+  name: "avenue"
+  trainset_json_path: './data/avenue_train.json'
+  testset_json_path: './data/avenue_test.json'
+  image_path: "/dataset/Avenue/Avenue19"
+  text_path: "/dataset/Avenue/Avenue19/internvl_video_simsce"
+  gt_files_dir: '/dataset/Avenue/Avenue19/gt'
+  decoder_layers: 4
+  bottleneck_dim: 192
+  weight_rgb: 0.9
+  weight_text: 0.1
+
